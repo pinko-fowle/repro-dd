@@ -1,3 +1,6 @@
+var trace = require('dd-trace');
+trace.init();
+
 var restify = require('restify');
 
 const server = restify.createServer({
