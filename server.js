@@ -12,7 +12,7 @@ server.use(restify.plugins.acceptParser(server.acceptable));
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
 
-server.get('/echo/:name', function (req, res, next) {
+server.get('/echo/:name', function echoName(req, res, next) {
   res.send(req.params);
   return next();
 });
