@@ -20,6 +20,7 @@ function echoName(req, res, next) {
   res.send(req.params);
   return next();
 }
+// legacy restify syntax
 server.get('/echo/:name', logSomething, echoName);
 
 async function logSomethingAsync(req, res) {
@@ -28,6 +29,7 @@ async function logSomethingAsync(req, res) {
 async function echoNameAsync(req, res) {
   res.send(req.params);
 }
+// restify v9+ can accept async functions
 server.get('/async/:name', logSomethingAsync, echoNameAsync);
 
 server.listen(8080, function () {
