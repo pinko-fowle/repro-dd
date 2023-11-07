@@ -2,6 +2,8 @@ var trace = require('dd-trace');
 trace.init();
 
 var restify = require('restify');
+var launchdarkly = require('@launchdarkly/node-server-sdk');
+launchdarkly.init(process.env.LD_SDK_KEY)
 
 const server = restify.createServer({
   name: 'repro-dd',
